@@ -4,6 +4,10 @@ class_name Player extends CharacterBody2D
 @onready var canvas_layer: Node = get_tree().root.get_node("game/CanvasLayer")  # Adjust path to CanvasLayer
 @onready var canvas_sprite: AnimatedSprite2D = canvas_layer.get_node("Healthbar")  # Adjust path to AnimatedSprite2D inside CanvasLayer
 @onready var canvas_sprite1: AnimatedSprite2D = canvas_layer.get_node("beerbar")  # Adjust path to AnimatedSprite2D inside CanvasLayer
+@onready var burpSFX = $burp
+@onready var waveSFX = $waveSpellSound
+@onready var fireSFX = $fireballSFX
+
 
 const SPEED = 70.0
 
@@ -42,6 +46,7 @@ func _process(delta: float):
 		fireball_active = true
 		face = 5
 		# Play fireball cast animation, ensuring it does not loop
+		fireSFX.play()
 		animated_sprite.play('fireball_cast', true)
 		
 		# Decrease drunk counter after casting fireball
@@ -72,6 +77,7 @@ func _process(delta: float):
 		lightning_active = true
 		face = 5
 		# Play lightning cast animation, ensuring it does not loop
+		waveSFX.play()
 		animated_sprite.play('lightning_cast', true)
 		
 		# Decrease drunk counter after casting lightning
@@ -87,6 +93,7 @@ func _process(delta: float):
 		lightning_active = true
 		face = 5
 		# Play lightning cast animation, ensuring it does not loop
+		waveSFX.play()
 		animated_sprite.play('lightning_cast', true)
 		
 		# Decrease drunk counter after casting lightning
@@ -144,6 +151,7 @@ func _process(delta: float):
 			print("Playing Beer animation")  # Debugging line to confirm animation is triggered
 			animated_sprite.stop()  # Stop any current animation
 			animated_sprite.play("Beer", true)  # The second argument being 'true' ensures one-shot behavior
+			burpSFX.play()
 
 # This function is called when any animation finishes
 func _on_animation_finished():
