@@ -154,9 +154,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4fc74")
 }],
-"loop": false,
+"loop": true,
 "name": &"Beer",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cl0go")
 }],
-"loop": false,
+"loop": true,
 "name": &"fireball_cast",
 "speed": 13.0
 }, {
@@ -257,14 +257,13 @@ script = ExtResource("1_1lj03")
 position = Vector2(14, -4)
 scale = Vector2(0.759999, 0.800001)
 sprite_frames = SubResource("SpriteFrames_2lk3b")
-animation = &"fireball_cast"
+animation = &"Beer"
 autoplay = "idle"
+frame_progress = 0.203924
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 5)
 scale = Vector2(1.02503, 0.436214)
 shape = SubResource("CapsuleShape2D_87nvd")
-
-[node name="Timer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
