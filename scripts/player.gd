@@ -7,6 +7,7 @@ const SPEED = 70.0
 #0 means idle, 1 means left, 2 means right 3 means down
 var face = 0
 
+var count = 0
 
 func _ready():
 	pass
@@ -20,10 +21,13 @@ func _process(delta):
 	
 	velocity = direction * SPEED
 	
-	if Input.is_action_just_pressed("Action"):
-		print("fireball")
 	
-	if Input.is_action_just_pressed("Left") and face != 1:
+	if Input.is_action_just_pressed("Action"):
+		print('fireball')
+		face=5
+		animated_sprite.play('fireball_cast')
+	
+	if Input.is_action_just_pressed("Left") and face != 1 and face!=5:
 		animated_sprite.play('run')
 		animated_sprite.flip_h = true
 		face = 1
@@ -39,10 +43,14 @@ func _process(delta):
 		face = 0
 		pass	
 	
-	if velocity == Vector2.ZERO:
+	if velocity == Vector2.ZERO and face != 5:
 		animated_sprite.play('idle')
 		face = 0
 		
 	
 func _physics_process(delta: float):
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	pass # Replace with function body.
