@@ -24,13 +24,24 @@ func _process(delta):
 		print("fireball")
 	
 	if Input.is_action_just_pressed("Left") and face != 1:
-		pass
+		animated_sprite.play('run')
+		animated_sprite.flip_h = true
+		face = 1
 	elif Input.is_action_just_pressed("Right") and face != 2:
-		pass
+		animated_sprite.play('run')
+		animated_sprite.flip_h = false
+		face = 2
 	elif Input.is_action_just_pressed("Up") and face != 3:
+		face = 3
 		pass
 	elif Input.is_action_just_pressed("Down") and face != 0:
+		animated_sprite.play('idle')
+		face = 0
 		pass	
+	
+	if velocity == Vector2.ZERO:
+		animated_sprite.play('idle')
+		face = 0
 		
 	
 func _physics_process(delta: float):

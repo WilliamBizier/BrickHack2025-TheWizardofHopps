@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcloqnimavvdy"]
+[gd_scene load_steps=17 format=3 uid="uid://bcloqnimavvdy"]
 
 [ext_resource type="PackedScene" uid="uid://cpg8vllvjdj8d" path="res://scenes/player.tscn" id="1_4e2ea"]
 [ext_resource type="Texture2D" uid="uid://dff34b11elxrf" path="res://assets/Environment/Green Woods/Assets/Tiles/Tiles.png" id="2_jra7f"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://3f5ck2t1xnyq" path="res://scenes/tree.tscn" id="7_s22l2"]
 [ext_resource type="PackedScene" uid="uid://dva44jqrktccu" path="res://scenes/UI.tscn" id="8_ps8es"]
 [ext_resource type="PackedScene" uid="uid://be0x5g2ocmydf" path="res://scenes/enemy.tscn" id="9_2blwr"]
+[ext_resource type="PackedScene" uid="uid://dfj1ldjkk30jw" path="res://scenes/player_detector.tscn" id="10_0a0dq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xh7r"]
 texture = ExtResource("2_jra7f")
@@ -1502,10 +1503,10 @@ position = Vector2(-235, 381)
 position = Vector2(-188, 394)
 
 [node name="Tree165" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-140, 393)
+position = Vector2(-140, 394)
 
 [node name="Tree166" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-91, 394)
+position = Vector2(-92, 394)
 
 [node name="Tree167" parent="Trees" instance=ExtResource("7_s22l2")]
 position = Vector2(-236, 454)
@@ -1514,34 +1515,34 @@ position = Vector2(-236, 454)
 position = Vector2(-189, 465)
 
 [node name="Tree169" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-141, 464)
+position = Vector2(-141, 465)
 
 [node name="Tree170" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-92, 466)
+position = Vector2(-93, 466)
 
 [node name="Tree171" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-49, 392)
+position = Vector2(-49, 394)
 
 [node name="Tree172" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-2, 393)
+position = Vector2(-2, 394)
 
 [node name="Tree173" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(46, 391)
+position = Vector2(46, 394)
 
 [node name="Tree174" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(95, 392)
+position = Vector2(95, 394)
 
 [node name="Tree175" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-50, 463)
+position = Vector2(-50, 465)
 
 [node name="Tree176" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(-3, 464)
+position = Vector2(-3, 465)
 
 [node name="Tree177" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(45, 463)
+position = Vector2(45, 466)
 
 [node name="Tree178" parent="Trees" instance=ExtResource("7_s22l2")]
-position = Vector2(94, 465)
+position = Vector2(94, 467)
 
 [node name="Tree11" parent="Trees" instance=ExtResource("7_s22l2")]
 position = Vector2(146, 380)
@@ -1553,3 +1554,7 @@ position = Vector2(146, 439)
 
 [node name="Enemy" parent="." instance=ExtResource("9_2blwr")]
 position = Vector2(66, 245)
+
+[node name="PlayerDetector" parent="." instance=ExtResource("10_0a0dq")]
+position = Vector2(-144, 309)
+scale = Vector2(-0.828681, 0.548345)

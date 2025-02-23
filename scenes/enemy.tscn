@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://be0x5g2ocmydf"]
+[gd_scene load_steps=9 format=3 uid="uid://be0x5g2ocmydf"]
 
 [ext_resource type="Texture2D" uid="uid://iw5ls5jsyugb" path="res://assets/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png" id="1_bouqh"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="2_abfxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ingqw"]
 atlas = ExtResource("1_bouqh")
@@ -35,10 +36,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21ckh"]
 
 [node name="Enemy" type="AnimatedSprite2D"]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_22cba")
 autoplay = "default"
+script = ExtResource("2_abfxs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 5)
+scale = Vector2(0.720515, 0.56014)
+shape = SubResource("CapsuleShape2D_21ckh")
+
+[node name="Down" type="RayCast2D" parent="CollisionShape2D"]
+
+[node name="Down2" type="RayCast2D" parent="CollisionShape2D"]
+target_position = Vector2(-1.3879, -73.196)
+
+[node name="Down3" type="RayCast2D" parent="CollisionShape2D"]
+target_position = Vector2(-59.6795, 0)
+
+[node name="Down4" type="RayCast2D" parent="CollisionShape2D"]
+target_position = Vector2(76.3343, 0)
