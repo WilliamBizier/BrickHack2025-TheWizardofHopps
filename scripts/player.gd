@@ -38,14 +38,20 @@ func _process(delta: float):
 	elif count == 120:
 		count = 0
 	
-	# Ensure the fireball action is triggered only once.
-	if Input.is_action_just_pressed("Action") and not fireball:
+	# Ensure the fireball action is triggered only once and if drunk counter is greater than 0
+	if Input.is_action_just_pressed("Action") and not fireball and drunk > 0:
 		print('fireball')
 		fireball = true
 		fireball_active = true
 		face = 5
 		# Play fireball cast animation, and ensure it does not loop
 		animated_sprite.play('fireball_cast', true)  # The second argument being 'true' makes sure it's a one-shot animation
+		
+		# Decrease drunk counter after casting fireball (ensure it doesn't go below 0)
+		if drunk > 0:
+			drunk -= 1
+		# Update the Beer bar based on the drunk state after using fireball
+		update_beer_bar()
 	
 	# Movement animations (if not drinking)
 	if not drinking:

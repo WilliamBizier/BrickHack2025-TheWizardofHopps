@@ -25,55 +25,66 @@ func _process(delta: float) -> void:
 	if raycast_up.is_colliding():
 		var collider = raycast_up.get_collider()  # Get the object that the ray hit
 		if collider and collider.is_in_group("player"):
-			print("Player is hit by the enemy (Up)!")
-
-			collider.health -= 1  # Reduce the player's health
-			print("Player's health: " + str(collider.health))
-			
-			# Update the health display on the canvas layer
-			update_health_display(collider.health)
-			
-			# Immediately delete the enemy after the first collision
-			queue_free()
+			# If the player is casting fireball, destroy the enemy without hurting the player
+			if player.fireball_active:
+				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			else:
+				print("Player is hit by the enemy (Up)!")
+				collider.health -= 1  # Reduce the player's health
+				print("Player's health: " + str(collider.health))
+				# Update the health display on the canvas layer
+				update_health_display(collider.health)
+				# Immediately delete the enemy after the first collision
+				queue_free()
 
 	if raycast_down.is_colliding():
 		var collider = raycast_down.get_collider()
 		if collider and collider.is_in_group("player"):
-			print("Player is hit by the enemy (Down)!")
-			collider.health -= 1
-			print("Player's health: " + str(collider.health))
-			
-			# Update the health display on the canvas layer
-			update_health_display(collider.health)
-			
-			# Immediately delete the enemy after the first collision
-			queue_free()
+			# If the player is casting fireball, destroy the enemy without hurting the player
+			if player.fireball_active:
+				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			else:
+				print("Player is hit by the enemy (Down)!")
+				collider.health -= 1
+				print("Player's health: " + str(collider.health))
+				# Update the health display on the canvas layer
+				update_health_display(collider.health)
+				# Immediately delete the enemy after the first collision
+				queue_free()
 
 	if raycast_left.is_colliding():
 		var collider = raycast_left.get_collider()
 		if collider and collider.is_in_group("player"):
-			print("Player is hit by the enemy (Left)!")
-			collider.health -= 1
-			print("Player's health: " + str(collider.health))
-			
-			# Update the health display on the canvas layer
-			update_health_display(collider.health)
-			
-			# Immediately delete the enemy after the first collision
-			queue_free()
+			# If the player is casting fireball, destroy the enemy without hurting the player
+			if player.fireball_active:
+				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			else:
+				print("Player is hit by the enemy (Left)!")
+				collider.health -= 1
+				print("Player's health: " + str(collider.health))
+				# Update the health display on the canvas layer
+				update_health_display(collider.health)
+				# Immediately delete the enemy after the first collision
+				queue_free()
 
 	if raycast_right.is_colliding():
 		var collider = raycast_right.get_collider()
 		if collider and collider.is_in_group("player"):
-			print("Player is hit by the enemy (Right)!")
-			collider.health -= 1
-			print("Player's health: " + str(collider.health))
-			
-			# Update the health display on the canvas layer
-			update_health_display(collider.health)
-			
-			# Immediately delete the enemy after the first collision
-			queue_free()
+			# If the player is casting fireball, destroy the enemy without hurting the player
+			if player.fireball_active:
+				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			else:
+				print("Player is hit by the enemy (Right)!")
+				collider.health -= 1
+				print("Player's health: " + str(collider.health))
+				# Update the health display on the canvas layer
+				update_health_display(collider.health)
+				# Immediately delete the enemy after the first collision
+				queue_free()
 
 	# Move the enemy toward the player
 	var direction = player.position - position

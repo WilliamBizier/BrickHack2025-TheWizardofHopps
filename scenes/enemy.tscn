@@ -54,19 +54,19 @@ shape = SubResource("CapsuleShape2D_21ckh")
 
 [node name="Down" type="RayCast2D" parent="."]
 position = Vector2(1, 5)
-scale = Vector2(0.720515, 0.56014)
+scale = Vector2(4.73138, 0.502286)
 
 [node name="Right" type="RayCast2D" parent="."]
 position = Vector2(1, 5)
-scale = Vector2(0.720515, 0.56014)
+scale = Vector2(0.283413, -2.29406)
 target_position = Vector2(76.3343, 0)
 
 [node name="Left" type="RayCast2D" parent="."]
 position = Vector2(1, 5)
-scale = Vector2(0.720515, 0.56014)
+scale = Vector2(0.397174, -1.25119)
 target_position = Vector2(-59.6795, 0)
 
 [node name="Up" type="RayCast2D" parent="."]
 position = Vector2(1, 5)
-scale = Vector2(0.720515, 0.56014)
+scale = Vector2(-3.52776, 0.415539)
 target_position = Vector2(-1.3879, -73.196)
