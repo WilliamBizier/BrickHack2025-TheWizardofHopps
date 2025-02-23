@@ -204,7 +204,7 @@ scale = Vector2(0.759999, 0.800001)
 sprite_frames = SubResource("SpriteFrames_2lk3b")
 animation = &"fireball_cast"
 autoplay = "idle"
-frame_progress = 0.964255
+frame_progress = 0.688876
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 5)
