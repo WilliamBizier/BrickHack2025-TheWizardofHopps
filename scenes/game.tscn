@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bra17whbs3h4s"]
+[gd_scene load_steps=17 format=3 uid="uid://bcloqnimavvdy"]
 
 [ext_resource type="PackedScene" uid="uid://cpg8vllvjdj8d" path="res://scenes/player.tscn" id="1_4e2ea"]
 [ext_resource type="Texture2D" uid="uid://dff34b11elxrf" path="res://assets/Environment/Green Woods/Assets/Tiles/Tiles.png" id="2_jra7f"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dva44jqrktccu" path="res://scenes/UI.tscn" id="8_ps8es"]
 [ext_resource type="PackedScene" uid="uid://be0x5g2ocmydf" path="res://scenes/enemy.tscn" id="9_2blwr"]
 [ext_resource type="PackedScene" uid="uid://dfj1ldjkk30jw" path="res://scenes/player_detector.tscn" id="10_0a0dq"]
-[ext_resource type="PackedScene" uid="uid://bwjdsdc32qx45" path="res://scenes/border.tscn" id="10_jju21"]
+[ext_resource type="PackedScene" path="res://scenes/border.tscn" id="10_jju21"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xh7r"]
 texture = ExtResource("2_jra7f")

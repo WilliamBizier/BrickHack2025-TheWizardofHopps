@@ -1,9 +1,138 @@
-[gd_scene load_steps=17 format=3 uid="uid://dva44jqrktccu"]
+[gd_scene load_steps=32 format=3 uid="uid://dva44jqrktccu"]
 
 [ext_resource type="Texture2D" uid="uid://dixgitmn3fyq0" path="res://assets/UI/Small tiles/Thick outline/uipack_rpg_sheet.png" id="1_f4ncu"]
 [ext_resource type="Texture2D" uid="uid://7ju82p1uhbbs" path="res://willAssets/UI/beerbar-Sheet.png" id="2_hbt7b"]
 [ext_resource type="Texture2D" uid="uid://djxl003ginqja" path="res://willAssets/UI/throwupBeerbar.png" id="3_ubi0v"]
+[ext_resource type="Texture2D" uid="uid://ccc5it0ku823b" path="res://willAssets/UI/coolDownBarBaseFireball.png" id="3_xh0vq"]
 [ext_resource type="Texture2D" uid="uid://nefde67ms16v" path="res://willAssets/UI/healthbar.png" id="4_nc8lo"]
+[ext_resource type="Texture2D" uid="uid://d082a6x8g77bu" path="res://willAssets/UI/coolDownBarBaseOtherSpellt.png" id="4_xdfas"]
+[ext_resource type="Texture2D" uid="uid://b1t3yxb8immlh" path="res://willAssets/UI/coolDownBarBase1.png" id="5_3rfdf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2csg"]
+atlas = ExtResource("3_xh0vq")
+region = Rect2(0, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0pg1"]
+atlas = ExtResource("3_xh0vq")
+region = Rect2(176, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wcn6"]
+atlas = ExtResource("3_xh0vq")
+region = Rect2(352, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp2e7"]
+atlas = ExtResource("3_xh0vq")
+region = Rect2(528, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1j7rd"]
+atlas = ExtResource("3_xh0vq")
+region = Rect2(704, 0, 176, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ly7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2csg")
+}],
+"loop": true,
+"name": &"f1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0pg1")
+}],
+"loop": true,
+"name": &"f2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wcn6")
+}],
+"loop": true,
+"name": &"f3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp2e7")
+}],
+"loop": true,
+"name": &"f4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1j7rd")
+}],
+"loop": true,
+"name": &"f5",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4vab"]
+atlas = ExtResource("4_xdfas")
+region = Rect2(0, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on7lp"]
+atlas = ExtResource("4_xdfas")
+region = Rect2(176, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11c2v"]
+atlas = ExtResource("4_xdfas")
+region = Rect2(352, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_005pa"]
+atlas = ExtResource("4_xdfas")
+region = Rect2(528, 0, 176, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0awxa"]
+atlas = ExtResource("4_xdfas")
+region = Rect2(704, 0, 176, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlil0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4vab")
+}],
+"loop": true,
+"name": &"f1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on7lp")
+}],
+"loop": true,
+"name": &"f2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11c2v")
+}],
+"loop": true,
+"name": &"f3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_005pa")
+}],
+"loop": true,
+"name": &"f4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0awxa")
+}],
+"loop": true,
+"name": &"f5",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ygui"]
 atlas = ExtResource("2_hbt7b")
@@ -136,6 +265,7 @@ animations = [{
 [node name="Abilities" type="Node" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Abilities"]
+visible = false
 position = Vector2(93, 559)
 scale = Vector2(2.86103, 2.57194)
 texture = ExtResource("1_f4ncu")
@@ -143,6 +273,7 @@ region_enabled = true
 region_rect = Rect2(336, 114, 34, 35)
 
 [node name="Label2" type="Label" parent="Abilities/Sprite2D"]
+visible = false
 offset_left = -11.8838
 offset_top = -19.0518
 offset_right = 46.1162
@@ -151,6 +282,7 @@ scale = Vector2(0.389614, 1.45544)
 text = "Shield"
 
 [node name="Sprite2D2" type="Sprite2D" parent="Abilities"]
+visible = false
 position = Vector2(196, 559)
 scale = Vector2(2.86103, 2.57194)
 texture = ExtResource("1_f4ncu")
@@ -158,6 +290,7 @@ region_enabled = true
 region_rect = Rect2(336, 114, 34, 35)
 
 [node name="Label3" type="Label" parent="Abilities/Sprite2D2"]
+visible = false
 offset_left = -10.8353
 offset_top = -18.2741
 offset_right = 47.1647
@@ -166,6 +299,7 @@ scale = Vector2(0.389614, 1.45544)
 text = "Fireball"
 
 [node name="Sprite2D3" type="Sprite2D" parent="Abilities"]
+visible = false
 position = Vector2(145, 475)
 scale = Vector2(2.86103, 2.57194)
 texture = ExtResource("1_f4ncu")
@@ -173,12 +307,32 @@ region_enabled = true
 region_rect = Rect2(336, 114, 34, 35)
 
 [node name="Label" type="Label" parent="Abilities/Sprite2D3"]
+visible = false
 offset_left = -12.9324
 offset_top = -21.3846
 offset_right = 60.0676
 offset_bottom = 1.61536
 scale = Vector2(0.389614, 1.45544)
 text = "Lightning"
+
+[node name="Node" type="Node" parent="Abilities"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Abilities/Node"]
+position = Vector2(584, 612)
+scale = Vector2(3.72159, 2.78125)
+texture = ExtResource("5_3rfdf")
+
+[node name="fireballC" type="AnimatedSprite2D" parent="Abilities/Node"]
+position = Vector2(577.125, 614)
+scale = Vector2(3.48722, 2.54687)
+sprite_frames = SubResource("SpriteFrames_5ly7k")
+animation = &"f5"
+
+[node name="otherSpell" type="AnimatedSprite2D" parent="Abilities/Node"]
+position = Vector2(588, 613)
+scale = Vector2(3.47994, 2.51563)
+sprite_frames = SubResource("SpriteFrames_xlil0")
+animation = &"f5"
 
 [node name="beerbar" type="AnimatedSprite2D" parent="."]
 position = Vector2(833, 57)
