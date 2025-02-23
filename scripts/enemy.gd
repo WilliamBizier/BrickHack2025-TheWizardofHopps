@@ -29,6 +29,10 @@ func _process(delta: float) -> void:
 			if player.fireball_active:
 				print("Enemy hit by fireball!")
 				queue_free()  # Destroy the enemy
+			# If the player is casting lightning, destroy the enemy
+			elif player.lightning_active:
+				print("Enemy hit by lightning!")
+				queue_free()  # Destroy the enemy
 			else:
 				print("Player is hit by the enemy (Up)!")
 				collider.health -= 1  # Reduce the player's health
@@ -44,6 +48,10 @@ func _process(delta: float) -> void:
 			# If the player is casting fireball, destroy the enemy without hurting the player
 			if player.fireball_active:
 				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			# If the player is casting lightning, destroy the enemy
+			elif player.lightning_active:
+				print("Enemy hit by lightning!")
 				queue_free()  # Destroy the enemy
 			else:
 				print("Player is hit by the enemy (Down)!")
@@ -61,6 +69,10 @@ func _process(delta: float) -> void:
 			if player.fireball_active:
 				print("Enemy hit by fireball!")
 				queue_free()  # Destroy the enemy
+			# If the player is casting lightning, destroy the enemy
+			elif player.lightning_active:
+				print("Enemy hit by lightning!")
+				queue_free()  # Destroy the enemy
 			else:
 				print("Player is hit by the enemy (Left)!")
 				collider.health -= 1
@@ -76,6 +88,10 @@ func _process(delta: float) -> void:
 			# If the player is casting fireball, destroy the enemy without hurting the player
 			if player.fireball_active:
 				print("Enemy hit by fireball!")
+				queue_free()  # Destroy the enemy
+			# If the player is casting lightning, destroy the enemy
+			elif player.lightning_active:
+				print("Enemy hit by lightning!")
 				queue_free()  # Destroy the enemy
 			else:
 				print("Player is hit by the enemy (Right)!")
