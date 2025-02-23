@@ -1,48 +1,96 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpg8vllvjdj8d"]
+[gd_scene load_steps=17 format=3 uid="uid://cpg8vllvjdj8d"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1lj03"]
 [ext_resource type="Texture2D" uid="uid://tfq7dhtepvmt" path="res://assets/Heroes/Wizzard/Idle/Idle-Sheet2.png" id="2_bpwsg"]
+[ext_resource type="Texture2D" uid="uid://1sg6wljl1ny3" path="res://willAssets/wizard/Run-Sheet.png" id="3_6bw7l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lf7t0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbqyu"]
 atlas = ExtResource("2_bpwsg")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(5, 7, 56, 57)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xhbj5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_em5om"]
 atlas = ExtResource("2_bpwsg")
-region = Rect2(64, 0, 64, 64)
+region = Rect2(69, 7, 56, 57)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ps45"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_djd63"]
 atlas = ExtResource("2_bpwsg")
-region = Rect2(128, 0, 64, 64)
+region = Rect2(133, 7, 56, 57)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_810w0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_31jud"]
 atlas = ExtResource("2_bpwsg")
-region = Rect2(192, 0, 64, 64)
+region = Rect2(197, 7, 56, 57)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pygav"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_blfdu"]
 atlas = ExtResource("2_bpwsg")
-region = Rect2(256, 0, 64, 64)
+region = Rect2(261, 7, 56, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ut2s"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(16, 12, 43, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pc30"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(80, 12, 43, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bk3v"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(144, 12, 43, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyvcl"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(208, 12, 43, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi8kk"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(272, 12, 43, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnvr2"]
+atlas = ExtResource("3_6bw7l")
+region = Rect2(336, 12, 43, 52)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2lk3b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lf7t0")
+"texture": SubResource("AtlasTexture_mbqyu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xhbj5")
+"texture": SubResource("AtlasTexture_em5om")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ps45")
+"texture": SubResource("AtlasTexture_djd63")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_810w0")
+"texture": SubResource("AtlasTexture_31jud")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pygav")
+"texture": SubResource("AtlasTexture_blfdu")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ut2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pc30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bk3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyvcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi8kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnvr2")
+}],
+"loop": true,
+"name": &"run",
 "speed": 12.0
 }]
 
@@ -54,12 +102,14 @@ position = Vector2(-1, -16)
 script = ExtResource("1_1lj03")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(15, -10)
+position = Vector2(9, -5)
+scale = Vector2(0.759999, 0.800001)
 sprite_frames = SubResource("SpriteFrames_2lk3b")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.0454036
+frame_progress = 0.0129564
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(2, 5)
+scale = Vector2(1.02503, 0.436214)
 shape = SubResource("CapsuleShape2D_87nvd")
