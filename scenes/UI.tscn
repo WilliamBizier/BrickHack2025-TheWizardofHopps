@@ -1,32 +1,137 @@
-[gd_scene load_steps=3 format=3 uid="uid://dva44jqrktccu"]
+[gd_scene load_steps=17 format=3 uid="uid://dva44jqrktccu"]
 
 [ext_resource type="Texture2D" uid="uid://dixgitmn3fyq0" path="res://assets/UI/Small tiles/Thick outline/uipack_rpg_sheet.png" id="1_f4ncu"]
-[ext_resource type="Texture2D" uid="uid://bo41lyf87vl4w" path="res://assets/UI/lifebar_16x16.png" id="1_odx5x"]
+[ext_resource type="Texture2D" uid="uid://7ju82p1uhbbs" path="res://willAssets/UI/beerbar-Sheet.png" id="2_hbt7b"]
+[ext_resource type="Texture2D" uid="uid://djxl003ginqja" path="res://willAssets/UI/throwupBeerbar.png" id="3_ubi0v"]
+[ext_resource type="Texture2D" uid="uid://nefde67ms16v" path="res://willAssets/UI/healthbar.png" id="4_nc8lo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ygui"]
+atlas = ExtResource("2_hbt7b")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6hgi"]
+atlas = ExtResource("3_ubi0v")
+region = Rect2(128, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y1dw"]
+atlas = ExtResource("2_hbt7b")
+region = Rect2(128, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rna4"]
+atlas = ExtResource("2_hbt7b")
+region = Rect2(256, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vo4x"]
+atlas = ExtResource("2_hbt7b")
+region = Rect2(384, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5u1j8"]
+atlas = ExtResource("3_ubi0v")
+region = Rect2(512, 0, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3lut6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ygui")
+}],
+"loop": true,
+"name": &"beer0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6hgi")
+}],
+"loop": true,
+"name": &"beer1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y1dw")
+}],
+"loop": true,
+"name": &"beer2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rna4")
+}],
+"loop": true,
+"name": &"beer3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vo4x")
+}],
+"loop": true,
+"name": &"beer4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5u1j8")
+}],
+"loop": true,
+"name": &"beer5",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyiop"]
+atlas = ExtResource("4_nc8lo")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfhoi"]
+atlas = ExtResource("4_nc8lo")
+region = Rect2(128, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l76gv"]
+atlas = ExtResource("4_nc8lo")
+region = Rect2(256, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7vqs"]
+atlas = ExtResource("4_nc8lo")
+region = Rect2(384, 0, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ej2ui"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyiop")
+}],
+"loop": true,
+"name": &"h1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfhoi")
+}],
+"loop": true,
+"name": &"h2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76gv")
+}],
+"loop": true,
+"name": &"h3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7vqs")
+}],
+"loop": true,
+"name": &"h4",
+"speed": 5.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer"]
-
-[node name="Hearts" type="Node" parent="."]
-
-[node name="Sprite2D4" type="Sprite2D" parent="Hearts"]
-position = Vector2(1099, 72)
-scale = Vector2(3.56197, 4.8059)
-texture = ExtResource("1_odx5x")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="Sprite2D5" type="Sprite2D" parent="Hearts"]
-position = Vector2(1017, 72)
-scale = Vector2(3.56197, 4.8059)
-texture = ExtResource("1_odx5x")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-
-[node name="Sprite2D6" type="Sprite2D" parent="Hearts"]
-position = Vector2(935, 72)
-scale = Vector2(3.56197, 4.8059)
-texture = ExtResource("1_odx5x")
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Abilities" type="Node" parent="."]
 
@@ -74,3 +179,15 @@ offset_right = 60.0676
 offset_bottom = 1.61536
 scale = Vector2(0.389614, 1.45544)
 text = "Lightning"
+
+[node name="beerbar" type="AnimatedSprite2D" parent="."]
+position = Vector2(833, 57)
+scale = Vector2(3.30469, 3.46094)
+sprite_frames = SubResource("SpriteFrames_3lut6")
+animation = &"beer0"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(267, 58.875)
+scale = Vector2(3.26172, 3.74219)
+sprite_frames = SubResource("SpriteFrames_ej2ui")
+animation = &"h4"
