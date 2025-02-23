@@ -340,7 +340,7 @@ scale = Vector2(3.30469, 3.46094)
 sprite_frames = SubResource("SpriteFrames_3lut6")
 animation = &"beer0"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Healthbar" type="AnimatedSprite2D" parent="."]
 position = Vector2(267, 58.875)
 scale = Vector2(3.26172, 3.74219)
 sprite_frames = SubResource("SpriteFrames_ej2ui")

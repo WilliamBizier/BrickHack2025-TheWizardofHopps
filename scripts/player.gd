@@ -1,22 +1,25 @@
 class_name Player extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var canvas_layer: Node = get_tree().root.get_node("game/CanvasLayer")  # Adjust path to CanvasLayer
+@onready var canvas_sprite: AnimatedSprite2D = canvas_layer.get_node("Healthbar")  # Adjust path to AnimatedSprite2D inside CanvasLayer
 
 const SPEED = 70.0
 
-#0 means idle, 1 means left, 2 means right 3 means down
+# 0 means idle, 1 means left, 2 means right, 3 means down
 var face = 0
 
 var count = 0
-
 var fireball = false
 
+var health = 4  # Starting health is 4
+var drunk = 0
+
 func _ready():
-	pass
+	add_to_group("player")  # Add player to the "player" group for collision detection
+	print("Canvas Layer Sprite: ", canvas_sprite)  # Debugging line to check if the sprite is accessed
 
-
-func _process(delta):
-	
+func _process(delta: float):
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 	direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
@@ -24,17 +27,19 @@ func _process(delta):
 	velocity = direction * SPEED
 	
 	if fireball and count < 120:
-		count +=1
+		count += 1
 	elif count == 120:
 		count = 0
 	
-	if Input.is_action_just_pressed("Action") and fireball == false:
+	# Ensure the fireball action is triggered only once.
+	if Input.is_action_just_pressed("Action") and not fireball:
 		print('fireball')
 		fireball = true
-		face=5
+		face = 5
 		animated_sprite.play('fireball_cast')
 	
-	if Input.is_action_just_pressed("Left") and face != 1 and face!=5:
+	# Movement animations
+	if Input.is_action_just_pressed("Left") and face != 1 and face != 5:
 		animated_sprite.play('run')
 		animated_sprite.flip_h = true
 		fireball = false
@@ -52,17 +57,17 @@ func _process(delta):
 		animated_sprite.play('idle')
 		face = 0
 		fireball = false
-		pass	
+		pass    
 	
+	# Idle condition
 	if velocity == Vector2.ZERO and face != 5 and fireball == false or count == 120:
 		animated_sprite.play('idle')
 		face = 0
 		fireball = false
-		
 	
+# Physics processing (for movement)
 func _physics_process(delta: float):
-	move_and_slide()
+	move_and_slide()  # This will move and slide based on the velocity
 
-
-func _on_animated_sprite_2d_animation_finished() -> void:
-	pass # Replace with function body.
+# This function handles the logic when the player collides with the enemy
+# The collision and health reduction parts are removed from here.
