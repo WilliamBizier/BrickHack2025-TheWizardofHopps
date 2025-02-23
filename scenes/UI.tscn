@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dva44jqrktccu"]
+
+[ext_resource type="Texture2D" uid="uid://dixgitmn3fyq0" path="res://assets/UI/Small tiles/Thick outline/uipack_rpg_sheet.png" id="1_f4ncu"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(93, 559)
+scale = Vector2(2.86103, 2.57194)
+texture = ExtResource("1_f4ncu")
+region_enabled = true
+region_rect = Rect2(336, 114, 34, 35)
+
+[node name="Label2" type="Label" parent="Sprite2D"]
+offset_left = -11.8838
+offset_top = -19.0518
+offset_right = 46.1162
+offset_bottom = 3.94821
+scale = Vector2(0.389614, 1.45544)
+text = "Shield"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(196, 559)
+scale = Vector2(2.86103, 2.57194)
+texture = ExtResource("1_f4ncu")
+region_enabled = true
+region_rect = Rect2(336, 114, 34, 35)
+
+[node name="Label3" type="Label" parent="Sprite2D2"]
+offset_left = -10.8353
+offset_top = -18.2741
+offset_right = 47.1647
+offset_bottom = 4.72586
+scale = Vector2(0.389614, 1.45544)
+text = "Fireball"
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(145, 475)
+scale = Vector2(2.86103, 2.57194)
+texture = ExtResource("1_f4ncu")
+region_enabled = true
+region_rect = Rect2(336, 114, 34, 35)
+
+[node name="Label" type="Label" parent="Sprite2D3"]
+offset_left = -12.9324
+offset_top = -21.3846
+offset_right = 60.0676
+offset_bottom = 1.61536
+scale = Vector2(0.389614, 1.45544)
+text = "Lightning"

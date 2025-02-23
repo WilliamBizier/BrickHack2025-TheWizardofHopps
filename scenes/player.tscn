@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpg8vllvjdj8d"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_1lj03"]
+[ext_resource type="Texture2D" uid="uid://tfq7dhtepvmt" path="res://assets/Heroes/Wizzard/Idle/Idle-Sheet2.png" id="2_bpwsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf7t0"]
+atlas = ExtResource("2_bpwsg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhbj5"]
+atlas = ExtResource("2_bpwsg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ps45"]
+atlas = ExtResource("2_bpwsg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_810w0"]
+atlas = ExtResource("2_bpwsg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pygav"]
+atlas = ExtResource("2_bpwsg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lk3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf7t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhbj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ps45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_810w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pygav")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_87nvd"]
+radius = 6.0
+
+[node name="player" type="CharacterBody2D"]
+position = Vector2(-1, -16)
+script = ExtResource("1_1lj03")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, -10)
+sprite_frames = SubResource("SpriteFrames_2lk3b")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.888058
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_87nvd")
