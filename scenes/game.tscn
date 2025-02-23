@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcloqnimavvdy"]
+[gd_scene load_steps=16 format=3 uid="uid://bcloqnimavvdy"]
 
 [ext_resource type="PackedScene" uid="uid://cpg8vllvjdj8d" path="res://scenes/player.tscn" id="1_4e2ea"]
 [ext_resource type="Texture2D" uid="uid://dff34b11elxrf" path="res://assets/Environment/Green Woods/Assets/Tiles/Tiles.png" id="2_jra7f"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://wg4babfkogoy" path="res://assets/Environment/Green Woods/Assets/Props/Vegetation/Vegetation_01.png" id="6_dfnx4"]
 [ext_resource type="PackedScene" uid="uid://3f5ck2t1xnyq" path="res://scenes/tree.tscn" id="7_s22l2"]
 [ext_resource type="PackedScene" uid="uid://dva44jqrktccu" path="res://scenes/UI.tscn" id="8_ps8es"]
+[ext_resource type="PackedScene" uid="uid://be0x5g2ocmydf" path="res://scenes/enemy.tscn" id="9_2blwr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xh7r"]
 texture = ExtResource("2_jra7f")
@@ -1549,3 +1550,6 @@ position = Vector2(146, 380)
 position = Vector2(146, 439)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("8_ps8es")]
+
+[node name="Enemy" parent="." instance=ExtResource("9_2blwr")]
+position = Vector2(66, 245)

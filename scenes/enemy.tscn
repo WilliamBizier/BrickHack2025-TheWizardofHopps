@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://be0x5g2ocmydf"]
+
+[ext_resource type="Texture2D" uid="uid://iw5ls5jsyugb" path="res://assets/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png" id="1_bouqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ingqw"]
+atlas = ExtResource("1_bouqh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0ody"]
+atlas = ExtResource("1_bouqh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gggge"]
+atlas = ExtResource("1_bouqh")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc4i7"]
+atlas = ExtResource("1_bouqh")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22cba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ingqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0ody")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gggge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc4i7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="AnimatedSprite2D"]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_22cba")
+autoplay = "default"
